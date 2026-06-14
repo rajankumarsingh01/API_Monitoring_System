@@ -38,6 +38,7 @@ class MongoClientRepository extends BaseClientRepository {
      * @param {string} clientId - The ID of the client
      * @returns {Promise<Object|null>} - The client object or null if not found
      */
+    
     async findById(clientId) {
         try {
             const client = await this.model.findById(clientId);
