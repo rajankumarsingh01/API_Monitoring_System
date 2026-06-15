@@ -77,3 +77,154 @@ class ResponseFormatter {
 }
 
 export default ResponseFormatter;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+=============================================================================
+RESPONSE FORMATTER
+=============================================================================
+
+Purpose:
+Poore project me API responses ko same format me bhejna.
+
+Without ResponseFormatter:
+
+{
+   user:"Rajan"
+}
+
+Ya
+
+{
+   data:{}
+}
+
+Har API ka response alag ho sakta hai.
+
+-----------------------------------------------------------------------------
+
+With ResponseFormatter:
+
+{
+   success:true,
+   message:"Success",
+   data:{},
+   statusCode:200,
+   timestamp:"..."
+}
+
+Har API ka response same structure me aayega.
+
+=============================================================================
+success()
+=============================================================================
+
+Successful response bhejne ke liye.
+
+Example:
+
+ResponseFormatter.success(user)
+
+Output:
+
+{
+   success:true,
+   message:"Success",
+   data:user,
+   statusCode:200
+}
+
+=============================================================================
+error()
+=============================================================================
+
+Error response bhejne ke liye.
+
+Example:
+
+ResponseFormatter.error(
+   "Invalid token",
+   401
+)
+
+=============================================================================
+validationError()
+=============================================================================
+
+Validation errors ke liye shortcut method.
+
+Example:
+
+Email required
+
+Password too short
+
+Output:
+
+{
+   success:false,
+   message:"Validation failed"
+}
+
+=============================================================================
+paginated()
+=============================================================================
+
+Pagination wale APIs ke liye.
+
+Example:
+
+GET /users?page=1
+
+Output:
+
+{
+   success:true,
+   data:[...],
+   pagination:{
+      page:1,
+      limit:10,
+      total:100,
+      totalPages:10
+   }
+}
+
+=============================================================================
+WHY IMPORTANT?
+=============================================================================
+
+✔ Consistent API Responses
+
+✔ Frontend Integration Easy
+
+✔ Better Debugging
+
+✔ Professional Backend Structure
+
+=============================================================================
+INTERVIEW ANSWER
+=============================================================================
+
+ResponseFormatter ek utility class hai jo poore application me
+standardized API responses provide karti hai taaki success, error,
+validation aur paginated responses ka structure consistent rahe.
+
+=============================================================================
+*/
